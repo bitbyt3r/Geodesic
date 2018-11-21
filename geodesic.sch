@@ -1,0 +1,653 @@
+EESchema Schematic File Version 4
+LIBS:geodesic-cache
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L MCU_Microchip_ATtiny:ATtiny24A-MU U1
+U 1 1 5BF4EA8C
+P 3300 3400
+F 0 "U1" H 2756 3446 50  0000 R CNN
+F 1 "ATtiny24A-MU" H 2756 3355 50  0000 R CNN
+F 2 "Package_DFN_QFN:QFN-20-1EP_4x4mm_P0.5mm_EP2.5x2.5mm_ThermalVias" H 3300 3400 50  0001 C CIN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/doc8183.pdf" H 3300 3400 50  0001 C CNN
+	1    3300 3400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3900 3200 4200 3200
+Wire Wire Line
+	3900 3300 4200 3300
+Wire Wire Line
+	3900 3400 4200 3400
+Text Label 4000 3200 0    50   ~ 0
+Clock
+Text Label 4000 3300 0    50   ~ 0
+Data_Out
+Text Label 4000 3400 0    50   ~ 0
+Data_In
+$Comp
+L power:GND #PWR0101
+U 1 1 5BF9CAC7
+P 3300 4300
+F 0 "#PWR0101" H 3300 4050 50  0001 C CNN
+F 1 "GND" H 3305 4127 50  0000 C CNN
+F 2 "" H 3300 4300 50  0001 C CNN
+F 3 "" H 3300 4300 50  0001 C CNN
+	1    3300 4300
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR0102
+U 1 1 5BF9CE71
+P 3300 2500
+F 0 "#PWR0102" H 3300 2350 50  0001 C CNN
+F 1 "+5V" H 3315 2673 50  0000 C CNN
+F 2 "" H 3300 2500 50  0001 C CNN
+F 3 "" H 3300 2500 50  0001 C CNN
+	1    3300 2500
+	1    0    0    -1  
+$EndComp
+Text Label 4000 4000 0    50   ~ 0
+Reset
+$Comp
+L Device:R R1
+U 1 1 5BF9F6A4
+P 4300 3850
+F 0 "R1" H 4370 3896 50  0000 L CNN
+F 1 "1k" H 4370 3805 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 4230 3850 50  0001 C CNN
+F 3 "~" H 4300 3850 50  0001 C CNN
+	1    4300 3850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3900 4000 4300 4000
+$Comp
+L power:+5V #PWR0103
+U 1 1 5BFA317A
+P 4300 3700
+F 0 "#PWR0103" H 4300 3550 50  0001 C CNN
+F 1 "+5V" H 4315 3873 50  0000 C CNN
+F 2 "" H 4300 3700 50  0001 C CNN
+F 3 "" H 4300 3700 50  0001 C CNN
+	1    4300 3700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3700 1350 3450 1350
+Wire Wire Line
+	3700 1450 3450 1450
+Wire Wire Line
+	3700 1550 3450 1550
+Wire Wire Line
+	3700 1650 3450 1650
+Wire Wire Line
+	3700 1750 3450 1750
+Text Label 3450 1350 0    50   ~ 0
+Clock
+Text Label 3450 1450 0    50   ~ 0
+Data_Out
+Text Label 3450 1550 0    50   ~ 0
+Data_In
+Text Label 3450 1650 0    50   ~ 0
+Reset
+Text Label 3450 1750 0    50   ~ 0
+Gnd
+Wire Wire Line
+	3700 1250 3450 1250
+Text Label 3450 1250 0    50   ~ 0
+VCC
+$Comp
+L Connector_Generic:Conn_01x06 J1
+U 1 1 5BFB67B1
+P 3900 1450
+F 0 "J1" H 3980 1442 50  0000 L CNN
+F 1 "Program" H 3980 1351 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical" H 3900 1450 50  0001 C CNN
+F 3 "~" H 3900 1450 50  0001 C CNN
+	1    3900 1450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x05 J7
+U 1 1 5BFD12AE
+P 10550 950
+F 0 "J7" H 10630 992 50  0000 L CNN
+F 1 "Hexagon" H 10630 901 50  0000 L CNN
+F 2 "local:Geodesic_Hub_Connector" H 10550 950 50  0001 C CNN
+F 3 "~" H 10550 950 50  0001 C CNN
+	1    10550 950 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10350 850  9900 850 
+Wire Wire Line
+	10350 950  9900 950 
+Wire Wire Line
+	10350 1050 9900 1050
+Text Label 9900 850  0    50   ~ 0
+Clock
+Text Label 9900 950  0    50   ~ 0
+Data_In
+Text Label 9900 1050 0    50   ~ 0
+Data_Out
+$Comp
+L power:+5V #PWR0106
+U 1 1 5BFD12BA
+P 10300 700
+F 0 "#PWR0106" H 10300 550 50  0001 C CNN
+F 1 "+5V" H 10315 873 50  0000 C CNN
+F 2 "" H 10300 700 50  0001 C CNN
+F 3 "" H 10300 700 50  0001 C CNN
+	1    10300 700 
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0107
+U 1 1 5BFD12C0
+P 10300 1200
+F 0 "#PWR0107" H 10300 950 50  0001 C CNN
+F 1 "GND" H 10305 1027 50  0000 C CNN
+F 2 "" H 10300 1200 50  0001 C CNN
+F 3 "" H 10300 1200 50  0001 C CNN
+	1    10300 1200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10300 1200 10300 1150
+Wire Wire Line
+	10300 1150 10350 1150
+Wire Wire Line
+	10300 700  10300 750 
+Wire Wire Line
+	10300 750  10350 750 
+$Comp
+L Connector_Generic:Conn_01x05 J8
+U 1 1 5BFD242A
+P 10550 1950
+F 0 "J8" H 10630 1992 50  0000 L CNN
+F 1 "Hexagon" H 10630 1901 50  0000 L CNN
+F 2 "local:Geodesic_Hub_Connector" H 10550 1950 50  0001 C CNN
+F 3 "~" H 10550 1950 50  0001 C CNN
+	1    10550 1950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10350 1850 9900 1850
+Wire Wire Line
+	10350 1950 9900 1950
+Wire Wire Line
+	10350 2050 9900 2050
+Text Label 9900 1850 0    50   ~ 0
+Clock
+Text Label 9900 1950 0    50   ~ 0
+Data_In
+Text Label 9900 2050 0    50   ~ 0
+Data_Out
+$Comp
+L power:+5V #PWR0108
+U 1 1 5BFD2436
+P 10300 1700
+F 0 "#PWR0108" H 10300 1550 50  0001 C CNN
+F 1 "+5V" H 10315 1873 50  0000 C CNN
+F 2 "" H 10300 1700 50  0001 C CNN
+F 3 "" H 10300 1700 50  0001 C CNN
+	1    10300 1700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0109
+U 1 1 5BFD243C
+P 10300 2200
+F 0 "#PWR0109" H 10300 1950 50  0001 C CNN
+F 1 "GND" H 10305 2027 50  0000 C CNN
+F 2 "" H 10300 2200 50  0001 C CNN
+F 3 "" H 10300 2200 50  0001 C CNN
+	1    10300 2200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10300 2200 10300 2150
+Wire Wire Line
+	10300 2150 10350 2150
+Wire Wire Line
+	10300 1700 10300 1750
+Wire Wire Line
+	10300 1750 10350 1750
+$Comp
+L Connector_Generic:Conn_01x05 J9
+U 1 1 5BFD3BEB
+P 10550 2950
+F 0 "J9" H 10630 2992 50  0000 L CNN
+F 1 "Hexagon" H 10630 2901 50  0000 L CNN
+F 2 "local:Geodesic_Hub_Connector" H 10550 2950 50  0001 C CNN
+F 3 "~" H 10550 2950 50  0001 C CNN
+	1    10550 2950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10350 2850 9900 2850
+Wire Wire Line
+	10350 2950 9900 2950
+Wire Wire Line
+	10350 3050 9900 3050
+Text Label 9900 2850 0    50   ~ 0
+Clock
+Text Label 9900 2950 0    50   ~ 0
+Data_In
+Text Label 9900 3050 0    50   ~ 0
+Data_Out
+$Comp
+L power:+5V #PWR0110
+U 1 1 5BFD3BF7
+P 10300 2700
+F 0 "#PWR0110" H 10300 2550 50  0001 C CNN
+F 1 "+5V" H 10315 2873 50  0000 C CNN
+F 2 "" H 10300 2700 50  0001 C CNN
+F 3 "" H 10300 2700 50  0001 C CNN
+	1    10300 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0111
+U 1 1 5BFD3BFD
+P 10300 3200
+F 0 "#PWR0111" H 10300 2950 50  0001 C CNN
+F 1 "GND" H 10305 3027 50  0000 C CNN
+F 2 "" H 10300 3200 50  0001 C CNN
+F 3 "" H 10300 3200 50  0001 C CNN
+	1    10300 3200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10300 3200 10300 3150
+Wire Wire Line
+	10300 3150 10350 3150
+Wire Wire Line
+	10300 2700 10300 2750
+Wire Wire Line
+	10300 2750 10350 2750
+$Comp
+L Connector_Generic:Conn_01x05 J10
+U 1 1 5BFD5165
+P 10550 3950
+F 0 "J10" H 10630 3992 50  0000 L CNN
+F 1 "Hexagon" H 10630 3901 50  0000 L CNN
+F 2 "local:Geodesic_Hub_Connector" H 10550 3950 50  0001 C CNN
+F 3 "~" H 10550 3950 50  0001 C CNN
+	1    10550 3950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10350 3850 9900 3850
+Wire Wire Line
+	10350 3950 9900 3950
+Wire Wire Line
+	10350 4050 9900 4050
+Text Label 9900 3850 0    50   ~ 0
+Clock
+Text Label 9900 3950 0    50   ~ 0
+Data_In
+Text Label 9900 4050 0    50   ~ 0
+Data_Out
+$Comp
+L power:+5V #PWR0112
+U 1 1 5BFD5171
+P 10300 3700
+F 0 "#PWR0112" H 10300 3550 50  0001 C CNN
+F 1 "+5V" H 10315 3873 50  0000 C CNN
+F 2 "" H 10300 3700 50  0001 C CNN
+F 3 "" H 10300 3700 50  0001 C CNN
+	1    10300 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0113
+U 1 1 5BFD5177
+P 10300 4200
+F 0 "#PWR0113" H 10300 3950 50  0001 C CNN
+F 1 "GND" H 10305 4027 50  0000 C CNN
+F 2 "" H 10300 4200 50  0001 C CNN
+F 3 "" H 10300 4200 50  0001 C CNN
+	1    10300 4200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10300 4200 10300 4150
+Wire Wire Line
+	10300 4150 10350 4150
+Wire Wire Line
+	10300 3700 10300 3750
+Wire Wire Line
+	10300 3750 10350 3750
+$Comp
+L Connector_Generic:Conn_01x05 J11
+U 1 1 5BFD6EE3
+P 10550 4950
+F 0 "J11" H 10630 4992 50  0000 L CNN
+F 1 "Hexagon" H 10630 4901 50  0000 L CNN
+F 2 "local:Geodesic_Hub_Connector" H 10550 4950 50  0001 C CNN
+F 3 "~" H 10550 4950 50  0001 C CNN
+	1    10550 4950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10350 4850 9900 4850
+Wire Wire Line
+	10350 4950 9900 4950
+Wire Wire Line
+	10350 5050 9900 5050
+Text Label 9900 4850 0    50   ~ 0
+Clock
+Text Label 9900 4950 0    50   ~ 0
+Data_In
+Text Label 9900 5050 0    50   ~ 0
+Data_Out
+$Comp
+L power:+5V #PWR0114
+U 1 1 5BFD6EEF
+P 10300 4700
+F 0 "#PWR0114" H 10300 4550 50  0001 C CNN
+F 1 "+5V" H 10315 4873 50  0000 C CNN
+F 2 "" H 10300 4700 50  0001 C CNN
+F 3 "" H 10300 4700 50  0001 C CNN
+	1    10300 4700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0115
+U 1 1 5BFD6EF5
+P 10300 5200
+F 0 "#PWR0115" H 10300 4950 50  0001 C CNN
+F 1 "GND" H 10305 5027 50  0000 C CNN
+F 2 "" H 10300 5200 50  0001 C CNN
+F 3 "" H 10300 5200 50  0001 C CNN
+	1    10300 5200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10300 5200 10300 5150
+Wire Wire Line
+	10300 5150 10350 5150
+Wire Wire Line
+	10300 4700 10300 4750
+Wire Wire Line
+	10300 4750 10350 4750
+$Comp
+L Connector_Generic:Conn_01x05 J2
+U 1 1 5BFDF9EC
+P 9200 950
+F 0 "J2" H 9280 992 50  0000 L CNN
+F 1 "Pentagon" H 9280 901 50  0000 L CNN
+F 2 "local:Geodesic_Hub_Connector" H 9200 950 50  0001 C CNN
+F 3 "~" H 9200 950 50  0001 C CNN
+	1    9200 950 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9000 850  8550 850 
+Wire Wire Line
+	9000 950  8550 950 
+Wire Wire Line
+	9000 1050 8550 1050
+Text Label 8550 850  0    50   ~ 0
+Clock
+Text Label 8550 950  0    50   ~ 0
+Data_In
+Text Label 8550 1050 0    50   ~ 0
+Data_Out
+$Comp
+L power:+5V #PWR0116
+U 1 1 5BFDF9F8
+P 8950 700
+F 0 "#PWR0116" H 8950 550 50  0001 C CNN
+F 1 "+5V" H 8965 873 50  0000 C CNN
+F 2 "" H 8950 700 50  0001 C CNN
+F 3 "" H 8950 700 50  0001 C CNN
+	1    8950 700 
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0117
+U 1 1 5BFDF9FE
+P 8950 1200
+F 0 "#PWR0117" H 8950 950 50  0001 C CNN
+F 1 "GND" H 8955 1027 50  0000 C CNN
+F 2 "" H 8950 1200 50  0001 C CNN
+F 3 "" H 8950 1200 50  0001 C CNN
+	1    8950 1200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8950 1200 8950 1150
+Wire Wire Line
+	8950 1150 9000 1150
+Wire Wire Line
+	8950 700  8950 750 
+Wire Wire Line
+	8950 750  9000 750 
+$Comp
+L Connector_Generic:Conn_01x05 J3
+U 1 1 5BFDFA08
+P 9200 1950
+F 0 "J3" H 9280 1992 50  0000 L CNN
+F 1 "Pentagon" H 9280 1901 50  0000 L CNN
+F 2 "local:Geodesic_Hub_Connector" H 9200 1950 50  0001 C CNN
+F 3 "~" H 9200 1950 50  0001 C CNN
+	1    9200 1950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9000 1850 8550 1850
+Wire Wire Line
+	9000 1950 8550 1950
+Wire Wire Line
+	9000 2050 8550 2050
+Text Label 8550 1850 0    50   ~ 0
+Clock
+Text Label 8550 1950 0    50   ~ 0
+Data_In
+Text Label 8550 2050 0    50   ~ 0
+Data_Out
+$Comp
+L power:+5V #PWR0118
+U 1 1 5BFDFA14
+P 8950 1700
+F 0 "#PWR0118" H 8950 1550 50  0001 C CNN
+F 1 "+5V" H 8965 1873 50  0000 C CNN
+F 2 "" H 8950 1700 50  0001 C CNN
+F 3 "" H 8950 1700 50  0001 C CNN
+	1    8950 1700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0119
+U 1 1 5BFDFA1A
+P 8950 2200
+F 0 "#PWR0119" H 8950 1950 50  0001 C CNN
+F 1 "GND" H 8955 2027 50  0000 C CNN
+F 2 "" H 8950 2200 50  0001 C CNN
+F 3 "" H 8950 2200 50  0001 C CNN
+	1    8950 2200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8950 2200 8950 2150
+Wire Wire Line
+	8950 2150 9000 2150
+Wire Wire Line
+	8950 1700 8950 1750
+Wire Wire Line
+	8950 1750 9000 1750
+$Comp
+L Connector_Generic:Conn_01x05 J4
+U 1 1 5BFDFA24
+P 9200 2950
+F 0 "J4" H 9280 2992 50  0000 L CNN
+F 1 "Pentagon" H 9280 2901 50  0000 L CNN
+F 2 "local:Geodesic_Hub_Connector" H 9200 2950 50  0001 C CNN
+F 3 "~" H 9200 2950 50  0001 C CNN
+	1    9200 2950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9000 2850 8550 2850
+Wire Wire Line
+	9000 2950 8550 2950
+Wire Wire Line
+	9000 3050 8550 3050
+Text Label 8550 2850 0    50   ~ 0
+Clock
+Text Label 8550 2950 0    50   ~ 0
+Data_In
+Text Label 8550 3050 0    50   ~ 0
+Data_Out
+$Comp
+L power:+5V #PWR0120
+U 1 1 5BFDFA30
+P 8950 2700
+F 0 "#PWR0120" H 8950 2550 50  0001 C CNN
+F 1 "+5V" H 8965 2873 50  0000 C CNN
+F 2 "" H 8950 2700 50  0001 C CNN
+F 3 "" H 8950 2700 50  0001 C CNN
+	1    8950 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0121
+U 1 1 5BFDFA36
+P 8950 3200
+F 0 "#PWR0121" H 8950 2950 50  0001 C CNN
+F 1 "GND" H 8955 3027 50  0000 C CNN
+F 2 "" H 8950 3200 50  0001 C CNN
+F 3 "" H 8950 3200 50  0001 C CNN
+	1    8950 3200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8950 3200 8950 3150
+Wire Wire Line
+	8950 3150 9000 3150
+Wire Wire Line
+	8950 2700 8950 2750
+Wire Wire Line
+	8950 2750 9000 2750
+$Comp
+L Connector_Generic:Conn_01x05 J5
+U 1 1 5BFDFA40
+P 9200 3950
+F 0 "J5" H 9280 3992 50  0000 L CNN
+F 1 "Pentagon" H 9280 3901 50  0000 L CNN
+F 2 "local:Geodesic_Hub_Connector" H 9200 3950 50  0001 C CNN
+F 3 "~" H 9200 3950 50  0001 C CNN
+	1    9200 3950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9000 3850 8550 3850
+Wire Wire Line
+	9000 3950 8550 3950
+Wire Wire Line
+	9000 4050 8550 4050
+Text Label 8550 3850 0    50   ~ 0
+Clock
+Text Label 8550 3950 0    50   ~ 0
+Data_In
+Text Label 8550 4050 0    50   ~ 0
+Data_Out
+$Comp
+L power:+5V #PWR0122
+U 1 1 5BFDFA4C
+P 8950 3700
+F 0 "#PWR0122" H 8950 3550 50  0001 C CNN
+F 1 "+5V" H 8965 3873 50  0000 C CNN
+F 2 "" H 8950 3700 50  0001 C CNN
+F 3 "" H 8950 3700 50  0001 C CNN
+	1    8950 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0123
+U 1 1 5BFDFA52
+P 8950 4200
+F 0 "#PWR0123" H 8950 3950 50  0001 C CNN
+F 1 "GND" H 8955 4027 50  0000 C CNN
+F 2 "" H 8950 4200 50  0001 C CNN
+F 3 "" H 8950 4200 50  0001 C CNN
+	1    8950 4200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8950 4200 8950 4150
+Wire Wire Line
+	8950 4150 9000 4150
+Wire Wire Line
+	8950 3700 8950 3750
+Wire Wire Line
+	8950 3750 9000 3750
+$Comp
+L Connector_Generic:Conn_01x05 J6
+U 1 1 5BFDFA5C
+P 9200 4950
+F 0 "J6" H 9280 4992 50  0000 L CNN
+F 1 "Pentagon" H 9280 4901 50  0000 L CNN
+F 2 "local:Geodesic_Hub_Connector" H 9200 4950 50  0001 C CNN
+F 3 "~" H 9200 4950 50  0001 C CNN
+	1    9200 4950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9000 4850 8550 4850
+Wire Wire Line
+	9000 4950 8550 4950
+Wire Wire Line
+	9000 5050 8550 5050
+Text Label 8550 4850 0    50   ~ 0
+Clock
+Text Label 8550 4950 0    50   ~ 0
+Data_In
+Text Label 8550 5050 0    50   ~ 0
+Data_Out
+$Comp
+L power:+5V #PWR0124
+U 1 1 5BFDFA68
+P 8950 4700
+F 0 "#PWR0124" H 8950 4550 50  0001 C CNN
+F 1 "+5V" H 8965 4873 50  0000 C CNN
+F 2 "" H 8950 4700 50  0001 C CNN
+F 3 "" H 8950 4700 50  0001 C CNN
+	1    8950 4700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0125
+U 1 1 5BFDFA6E
+P 8950 5200
+F 0 "#PWR0125" H 8950 4950 50  0001 C CNN
+F 1 "GND" H 8955 5027 50  0000 C CNN
+F 2 "" H 8950 5200 50  0001 C CNN
+F 3 "" H 8950 5200 50  0001 C CNN
+	1    8950 5200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8950 5200 8950 5150
+Wire Wire Line
+	8950 5150 9000 5150
+Wire Wire Line
+	8950 4700 8950 4750
+Wire Wire Line
+	8950 4750 9000 4750
+$EndSCHEMATC
