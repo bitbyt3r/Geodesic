@@ -54,6 +54,20 @@ for poly in polys:
     theta = (((2*math.pi)/poly["sides"])*i+(math.pi/2))%(2*math.pi)
     generate_footprint(theta, start_ref, poly["name"])
 
+def approx_arc(cx, cy, lx, ly, theta, segments=100):
+  string = ""
+  start_theta = math.atan2(ly-cy, lx-cx)
+  radius = math.sqrt((ly-cy)**2+(lx-cx)**2)
+  for seg in range(segments):
+    ct = start_theta + (math.radians(theta)/segments)*seg
+    x = radius*math.cos(ct)+cx
+    y = radius*math.sin(ct)+cy
+    string += "  (gr_line (start {:.2f} {:.2f}) (end {:.2f} {:.2f}) (layer Edge.Cuts) (width 0.05))\n".format(lx, ly, x, y)
+    lx = x
+    ly = y
+  return string, [lx, ly]
+
+
 angles = edges.keys()
 angles.sort()
 last = edges[angles[-1]][-1]
@@ -62,7 +76,10 @@ for angle in angles:
   point[0] = float("{:.2f}".format(point[0]))
   point[1] = float("{:.2f}".format(point[1]))
   theta = abs(math.degrees(math.atan2(point[1]-dy, point[0]-dx)-math.atan2(last[1]-dy, last[0]-dx)))
-  dynamic += "  (gr_arc (start {:.2f} {:.2f}) (end {:.8f} {:.8f}) (angle {:.8f}) (layer Edge.Cuts) (width 0.05))\n".format(dx, dy, point[0], point[1], theta)
+#  dynamic += "  (gr_arc (start {:.2f} {:.2f}) (end {:.8f} {:.8f}) (angle {:.8f}) (layer Edge.Cuts) (width 0.05))\n".format(dx, dy, point[0], point[1], theta)
+  lines, npoint = approx_arc(dx, dy, point[0], point[1], theta)
+  dynamic += lines
+  dynamic += "  (gr_line (start {:.2f} {:.2f}) (end {:.2f} {:.2f}) (layer Edge.Cuts) (width 0.05))\n".format(last[0], last[1], npoint[0], npoint[1])
   last = point
   for point in edges[angle][1:]:
     dynamic += "  (gr_line (start {:.2f} {:.2f}) (end {:.2f} {:.2f}) (layer Edge.Cuts) (width 0.05))\n".format(last[0], last[1], point[0], point[1])
