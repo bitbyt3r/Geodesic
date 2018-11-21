@@ -2,26 +2,29 @@
 import math
 
 start_ref = 2
-radius = 65
+radius = 50
 page_height = 210
 page_width = 297
 
 polys = [
-  {"name": "Hexagon", "sides": 6},
-  {"name": "Pentagon", "sides": 5}
+  {"name": "4-Way", "sides": 4},
+  {"name": "5-Way", "sides": 5},
+  {"name": "7-Way", "sides": 7},
 ]
 
 edge_parts = [
-  [6.5,0],
+  [3,0],
   [0.8,0],
   [0.8,12],
   [-0.8,12],
   [-0.8,0],
-  [-6.5,0],
+  [-3,0],
 ]
 edges = {}
 
 dynamic = ""
+dx = float("{:.2f}".format(page_width/2))
+dy = float("{:.2f}".format(page_height/2))
 
 with open("./template.txt", "r") as FILE:
   footprint = FILE.read()
@@ -53,8 +56,14 @@ angles = edges.keys()
 angles.sort()
 last = edges[angles[-1]][-1]
 for angle in angles:
-  for point in edges[angle]:
-    dynamic += "  (gr_line (start {:.2f} {:.2f}) (end {:.2f} {:.2f}) (layer Edge.Cuts) (width 0.05))".format(last[0], last[1], point[0], point[1])+"\n"
+  point = edges[angle][0]
+  point[0] = float("{:.2f}".format(point[0]))
+  point[1] = float("{:.2f}".format(point[1]))
+  theta = abs(math.degrees(math.atan2(point[1]-dy, point[0]-dx)-math.atan2(last[1]-dy, last[0]-dx)))
+  dynamic += "  (gr_arc (start {:.2f} {:.2f}) (end {:.8f} {:.8f}) (angle {:.8f}) (layer Edge.Cuts) (width 0.05))\n".format(dx, dy, point[0], point[1], theta)
+  last = point
+  for point in edges[angle][1:]:
+    dynamic += "  (gr_line (start {:.2f} {:.2f}) (end {:.2f} {:.2f}) (layer Edge.Cuts) (width 0.05))\n".format(last[0], last[1], point[0], point[1])
     last = point
 
 with open("../geodesic.kicad_pcb", "w") as FILE:
