@@ -1,7 +1,7 @@
 #!/usr/bin/python
 import math
 
-radius = 50
+radius = 60
 dome_radius = 500
 page_height = 297
 page_width = 420

@@ -2,14 +2,13 @@
 import math
 
 start_ref = 2
-radius = 50
+radius = 60
 page_height = 210
 page_width = 297
 
 polys = [
-  {"name": "4-Way", "sides": 4},
-  {"name": "5-Way", "sides": 5},
-  {"name": "7-Way", "sides": 7},
+  {"name": "4-Way", "sides": [90, 180, 270]},
+  {"name": "7-Way", "sides": [49.21, 113.95, 163.16, 212.37, 261.58, 310.79]},
 ]
 
 edge_parts = [
@@ -49,9 +48,9 @@ def generate_footprint(theta,ref,val):
 
 generate_footprint(math.pi/2,"J{0}".format(start_ref),"Base")
 for poly in polys:
-  for i in range(1, poly["sides"]):
+  for side in poly["sides"]:
     start_ref += 1
-    theta = (((2*math.pi)/poly["sides"])*i+(math.pi/2))%(2*math.pi)
+    theta = (math.radians(side)+(math.pi/2))%(2*math.pi)
     generate_footprint(theta, start_ref, poly["name"])
 
 def approx_arc(cx, cy, lx, ly, theta, segments=100):
