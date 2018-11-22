@@ -1,12 +1,12 @@
-(kicad_pcb (version 20171130) (host pcbnew "(5.0.1)-4")
+(kicad_pcb (version 20171130) (host pcbnew 6.0.0-rc1-unknown-r14474-ae6989f3)
 
   (general
     (thickness 1.6)
-    (drawings 3)
-    (tracks 0)
+    (drawings 218)
+    (tracks 40)
     (zones 0)
-    (modules 2)
-    (nets 1)
+    (modules 8)
+    (nets 8)
   )
 
   (page A3)
@@ -39,8 +39,6 @@
     (zone_clearance 0.508)
     (zone_45_only no)
     (trace_min 0.2)
-    (segment_width 0.2)
-    (edge_width 0.15)
     (via_size 0.8)
     (via_drill 0.4)
     (via_min_size 0.4)
@@ -50,6 +48,8 @@
     (uvias_allowed no)
     (uvia_min_size 0.2)
     (uvia_min_drill 0.1)
+    (edge_width 0.15)
+    (segment_width 0.2)
     (pcb_text_width 0.3)
     (pcb_text_size 1.5 1.5)
     (mod_edge_width 0.15)
@@ -91,6 +91,13 @@
   )
 
   (net 0 "")
+  (net 1 "Net-(J1-Pad4)")
+  (net 2 "Net-(J1-Pad3)")
+  (net 3 GND)
+  (net 4 /Clock)
+  (net 5 +5V)
+  (net 6 /Data_In)
+  (net 7 /Data_Out)
 
   (net_class Default "This is the default net class."
     (clearance 0.2)
@@ -99,8 +106,14 @@
     (via_drill 0.4)
     (uvia_dia 0.3)
     (uvia_drill 0.1)
+    (add_net +5V)
+    (add_net /Clock)
+    (add_net /Data_In)
+    (add_net /Data_Out)
+    (add_net GND)
+    (add_net "Net-(J1-Pad3)")
+    (add_net "Net-(J1-Pad4)")
   )
-
 {dynamic}
-
 )
+

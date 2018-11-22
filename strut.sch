@@ -1,0 +1,148 @@
+EESchema Schematic File Version 4
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Connector_Generic:Conn_01x05 J2
+U 1 1 5BFD12AE
+P 5850 2850
+F 0 "J2" H 5930 2892 50  0000 L CNN
+F 1 "Hexagon" H 5930 2801 50  0000 L CNN
+F 2 "local:Spoke_Connector" H 5850 2850 50  0001 C CNN
+F 3 "~" H 5850 2850 50  0001 C CNN
+	1    5850 2850
+	1    0    0    -1  
+$EndComp
+Text Label 5200 2750 0    50   ~ 0
+Clock
+Text Label 5200 2850 0    50   ~ 0
+Data_In
+Text Label 5200 2950 0    50   ~ 0
+Data_Out
+$Comp
+L power:+5V #PWR03
+U 1 1 5BFD12BA
+P 5600 2600
+F 0 "#PWR03" H 5600 2450 50  0001 C CNN
+F 1 "+5V" H 5615 2773 50  0000 C CNN
+F 2 "" H 5600 2600 50  0001 C CNN
+F 3 "" H 5600 2600 50  0001 C CNN
+	1    5600 2600
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR04
+U 1 1 5BFD12C0
+P 5600 3100
+F 0 "#PWR04" H 5600 2850 50  0001 C CNN
+F 1 "GND" H 5605 2927 50  0000 C CNN
+F 2 "" H 5600 3100 50  0001 C CNN
+F 3 "" H 5600 3100 50  0001 C CNN
+	1    5600 3100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5600 3100 5600 3050
+Wire Wire Line
+	5600 3050 5650 3050
+Wire Wire Line
+	5600 2600 5600 2650
+Wire Wire Line
+	5600 2650 5650 2650
+$Comp
+L Connector_Generic:Conn_01x05 J1
+U 1 1 5BF6C278
+P 3350 2850
+F 0 "J1" H 3430 2892 50  0000 L CNN
+F 1 "Hexagon" H 3430 2801 50  0000 L CNN
+F 2 "local:Spoke_Connector" H 3350 2850 50  0001 C CNN
+F 3 "~" H 3350 2850 50  0001 C CNN
+	1    3350 2850
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR01
+U 1 1 5BF6C284
+P 3600 2600
+F 0 "#PWR01" H 3600 2450 50  0001 C CNN
+F 1 "+5V" H 3615 2773 50  0000 C CNN
+F 2 "" H 3600 2600 50  0001 C CNN
+F 3 "" H 3600 2600 50  0001 C CNN
+	1    3600 2600
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR02
+U 1 1 5BF6C28A
+P 3600 3100
+F 0 "#PWR02" H 3600 2850 50  0001 C CNN
+F 1 "GND" H 3605 2927 50  0000 C CNN
+F 2 "" H 3600 3100 50  0001 C CNN
+F 3 "" H 3600 3100 50  0001 C CNN
+	1    3600 3100
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	3600 3100 3600 3050
+Wire Wire Line
+	3600 3050 3550 3050
+Wire Wire Line
+	3600 2600 3600 2650
+Wire Wire Line
+	3600 2650 3550 2650
+$Comp
+L Device:Jumper JP1
+U 1 1 5BF6E6AD
+P 4450 2850
+F 0 "JP1" H 4450 3114 50  0000 C CNN
+F 1 "Jumper" H 4450 3023 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 4450 2850 50  0001 C CNN
+F 3 "~" H 4450 2850 50  0001 C CNN
+	1    4450 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Jumper JP2
+U 1 1 5BF6EE97
+P 4450 2950
+F 0 "JP2" H 4450 3214 50  0000 C CNN
+F 1 "Jumper" H 4450 3123 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 4450 2950 50  0001 C CNN
+F 3 "~" H 4450 2950 50  0001 C CNN
+	1    4450 2950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3550 2850 4150 2850
+Wire Wire Line
+	3550 2950 4150 2950
+Wire Wire Line
+	3550 2750 5650 2750
+Wire Wire Line
+	5000 2850 5000 2950
+Wire Wire Line
+	5000 2950 4750 2950
+Wire Wire Line
+	5000 2850 5650 2850
+Wire Wire Line
+	4750 2850 4900 2850
+Wire Wire Line
+	4900 2850 4900 2900
+Wire Wire Line
+	4900 2900 5100 2900
+Wire Wire Line
+	5100 2900 5100 2950
+Wire Wire Line
+	5100 2950 5650 2950
+$EndSCHEMATC

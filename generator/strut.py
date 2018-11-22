@@ -9,6 +9,10 @@ page_width = 420
 #angle = math.radians(15.18)
 length = 357.4
 angle = math.radians(20.94)
+paths = [
+  "/5BF6C278",
+  "/5BFD12AE"
+]
 
 edge_parts = [
   [-10, -17],
@@ -31,7 +35,7 @@ with open("./strut_connector.txt", "r") as FILE:
 with open("./strut_main.txt", "r") as FILE:
   template = FILE.read()
 
-def generate_footprint(theta,x,ref,val,flip=False):
+def generate_footprint(theta,x,ref,val,path,flip=False):
   global dynamic
   y = dy
   r = (270-theta/math.pi*180)%360
@@ -42,7 +46,7 @@ def generate_footprint(theta,x,ref,val,flip=False):
       point[0]*math.sin(ntheta)+point[1]*math.cos(ntheta)+y
     ] for point in edge_parts
   ]
-  new_fp= footprint.format(x=x,y=y,r=r,ref=ref,val=val,r2=r+90)+"\n"
+  new_fp= footprint.format(x=x,y=y,r=r,ref=ref,val=val,r2=r+90,path=path)+"\n"
   if flip:
     new_fp = new_fp.replace("B.", "temp.")
     new_fp = new_fp.replace("F.", "B.")
@@ -54,8 +58,8 @@ def generate_footprint(theta,x,ref,val,flip=False):
     new_fp = new_fp.replace("OTHERSENT", "(at ")
   dynamic += new_fp
 
-generate_footprint(math.pi-angle,dx-(length-radius*2)/2,"J1","Left",flip=True)
-generate_footprint(angle,dx+(length-radius*2)/2,"J2","Right")
+generate_footprint(math.pi-angle,dx-(length-radius*2)/2,"J1","Left",paths[0],flip=True)
+generate_footprint(angle,dx+(length-radius*2)/2,"J2","Right",paths[1])
 
 def approx_arc(cx, cy, lx, ly, theta, last, segments=100):
   string = ""
