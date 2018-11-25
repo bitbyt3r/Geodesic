@@ -1,9 +1,9 @@
-(pcb /home/mark25/git/geodesic/geodesic.dsn
+(pcb C:\Users\mark25\Documents\git\Geodesic\geodesic.dsn
   (parser
     (string_quote ")
     (space_in_quoted_tokens on)
     (host_cad "KiCad's Pcbnew")
-    (host_version "6.0.0-rc1-unknown-r14484-ed6c68a1")
+    (host_version "(5.0.1)-4")
   )
   (resolution um 10)
   (unit um)
@@ -210,10 +210,10 @@
     )
     (via "Via[0-1]_800:400_um")
     (rule
-      (width 250)
-      (clearance 200.1)
-      (clearance 200.1 (type default_smd))
-      (clearance 50 (type smd_smd))
+      (width 200)
+      (clearance 150.1)
+      (clearance 150.1 (type default_smd))
+      (clearance 37.5 (type smd_smd))
     )
   )
   (placement
@@ -230,7 +230,7 @@
       (place J10 193430 -144200 front 49.21 (PN Hexagon))
     )
     (component Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder
-      (place R1 116000 -147525 front 270 (PN 1k))
+      (place R1 124000 -151025 front 90 (PN 1k))
       (place C1 146975 -87500 front 180 (PN 1uF))
       (place C2 146975 -127000 front 0 (PN 1uF))
       (place C5 169500 -105525 front 90 (PN 1uF))
@@ -247,10 +247,10 @@
       (place R18 146000 -118525 front 270 (PN R))
     )
     (component Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical
-      (place J11 121000 -153000 front 90 (PN Program))
+      (place J11 124000 -155000 front 90 (PN Program))
     )
     (component "Package_DFN_QFN:QFN-20-1EP_4x4mm_P0.5mm_EP2.5x2.5mm_ThermalVias"
-      (place U1 124500 -146000 front 270 (PN "ATtiny24A-MU"))
+      (place U1 132625 -140375 front 270 (PN "ATtiny24A-MU"))
     )
     (component Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder
       (place C3 130475 -101000 front 180 (PN 2.2uF))
@@ -800,8 +800,8 @@
         (use_via Via[0-1]_800:400_um)
       )
       (rule
-        (width 250)
-        (clearance 200.1)
+        (width 200)
+        (clearance 150.1)
       )
     )
   )
